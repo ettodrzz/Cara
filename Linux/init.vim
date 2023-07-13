@@ -1,30 +1,33 @@
-" SHOW LINE NUMBERS
-set number
-
-" SYNTAX HIGHLIGHTING ON
-syntax on
-
-" TYPE FILE DETECTION
+" Detect the type of file that is edited
 filetype on
 
-" TABS
-" Use space characters
+" Print the line number in front of each line
+set number
+" Show the line number in another font or color
+highlight LineNr ctermbg=DarkGray ctermfg=Black cterm=italic
+
+" Use the appropriate number of spaces to insert a Tab
 set expandtab
-" Size
-set shiftwidth=4
-set tabstop=4
-" Auto indentation
+" Number of spaces that a Tab or BS counts
+set softtabstop=4
+" Smart autoindentation when starting a new line
 set smartindent
+" Number of spaces to use for each step of (auto)indent
+set shiftwidth=4
 
-" BACKSPACE BEHAVIOUR
+" Lines longer than the width of the window will wrap and displaying continues on the next line
+set nowrap
+
+" Influences the working of BS, Del, CTRL-W and CTRL-U in Insert mode
 set backspace=indent,eol,start
+" indent: Allow backspacing over autoindent
+" eol: Allow backspacing over line breaks
+" start: Allow backspacing over the start of insert; CTRL-W and CTRL-U stop once at the start of insert
 
-" REMOVE SWAP AND BACKUP FILES FROM WORKING DIRECTORY
+" Directory for the swap file
 set directory=/tmp
+" Directory for the backup file
 set backupdir=/tmp
 
-" DISABLE ERROR BELLS
+" Specifies for wich events the bell will not be run
 set belloff=all
-
-" DISABLE COMPATIBILITY WITH VI
-set nocompatible
