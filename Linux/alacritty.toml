@@ -12,28 +12,57 @@ lines = 25
 x = 8
 y = 8
 
-# Gruvbox Light
+# Dracula theme
 [colors.primary]
-background = "#fbf1c7"
-foreground = "#3c3836"
+background = "#282a36"
+foreground = "#f8f8f2"
+bright_foreground = "#ffffff"
+[colors.cursor]
+text = "CellBackground"
+cursor = "CellForeground"
+[colors.vi_mode_cursor]
+text = "CellBackground"
+cursor = "CellForeground"
+[colors.search.matches]
+foreground = "#44475a"
+background = "#50fa7b"
+[colors.search.focused_match]
+foreground = "#44475a"
+background = "#ffb86c"
+[colors.footer_bar]
+background = "#282a36"
+foreground = "#f8f8f2"
+[colors.hints.start]
+foreground = "#282a36"
+background = "#f1fa8c"
+[colors.hints.end]
+foreground = "#f1fa8c"
+background = "#282a36"
+[colors.line_indicator]
+foreground = "None"
+background = "None"
+[colors.selection]
+text = "CellForeground"
+background = "#44475a"
 [colors.normal]
-black = "#fbf1c7"
-red = "#cc241d"
-green = "#98971a"
-yellow = "#d79921"
-blue = "#458588"
-magenta = "#b16286"
-cyan = "#689d6a"
-white = "#7c6f64"
+black = "#21222c"
+red = "#ff5555"
+green = "#50fa7b"
+yellow = "#f1fa8c"
+blue = "#bd93f9"
+magenta = "#ff79c6"
+cyan = "#8be9fd"
+white = "#f8f8f2"
 [colors.bright]
-black = "#928374"
-red = "#9d0006"
-green = "#79740e"
-yellow = "#b57614"
-blue = "#076678"
-magenta = "#8f3f71"
-cyan = "#427b58"
-white = "#3c3836"
+black = "#6272a4"
+red = "#ff6e6e"
+green = "#69ff94"
+yellow = "#ffffa5"
+blue = "#d6acff"
+magenta = "#ff92df"
+cyan = "#a4ffff"
+white = "#ffffff"
+
 
 [cursor.style]
 shape = "Underline"
