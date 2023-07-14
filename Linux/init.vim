@@ -4,7 +4,7 @@ filetype on
 " Print the line number in front of each line
 set number
 " Show the line number in another font or color
-highlight LineNr ctermbg=DarkGray ctermfg=Black cterm=italic
+highlight LineNr ctermfg=Gray cterm=italic
 
 " Use the appropriate number of spaces to insert a Tab
 set expandtab
