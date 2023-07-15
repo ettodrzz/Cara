@@ -10,6 +10,21 @@ Restore the configuration file:
 curl --create-dirs --output ~/.config/alacritty/alacritty.toml https://raw.githubusercontent.com/ettodrzz/Cara/main/Linux/alacritty.toml
 ```
 
+### Bash
+
+The `.bashrc` file is a shell script that is executed every time you open a new terminal.
+
+The `.profile` file is also a shell script, but it is executed before the `.bashrc` file, when you log in to your account.
+
+Restore both files:
+
+```bash
+curl --create-dirs --output ~/.bashrc https://raw.githubusercontent.com/ettodrzz/Cara/main/Linux/.bashrc
+curl --create-dirs --output ~/.profile https://raw.githubusercontent.com/ettodrzz/Cara/main/Linux/.profile
+```
+
+Reopen the terminal to see the changes.
+
 ### Git
 
 Install from the package manager:
@@ -69,7 +84,7 @@ Clone the repository in the root:
 git clone https://github.com/nvm-sh/nvm.git ~/.nvm
 ```
 
-Uncomment or add the next lines in the .bashrc file to have it automatically sourced upon login:
+Uncomment or add the next lines in the [.bashrc](https://github.com/ettdrzz/Cara#bash) file to have it automatically sourced upon login:
 
 ```bash
 export NVM_DIR="$HOME/.nvm"
