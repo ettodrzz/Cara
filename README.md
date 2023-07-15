@@ -2,17 +2,43 @@
 
 ### Alacritty
 
-1. [Installation](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
-2. Restore the configuration file:
+[Installation](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
 
-```bash
-curl --create-dirs --output ~/.config/alacritty/alacritty.toml https://raw.githubusercontent.com/ettodrzz/Cara/main/Linux/alacritty.toml
-```
+Restore the configuration file:
+
+    ```bash
+    curl --create-dirs --output ~/.config/alacritty/alacritty.toml https://raw.githubusercontent.com/ettodrzz/Cara/main/Linux/alacritty.toml
+    ```
 
 ### Neovim
 
-1. [Installation](https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
-2. Restore the configuration file:
-```bash
-curl --create-dirs --output ~/.config/nvim/init.vim https://raw.githubusercontent.com/ettodrzz/Cara/main/Linux/init.vim
-```
+[Installation](https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
+
+Restore the configuration file:
+
+    ```bash
+    curl --create-dirs --output ~/.config/nvim/init.vim https://raw.githubusercontent.com/ettodrzz/Cara/main/Linux/init.vim
+    ```
+
+### NVM
+
+Clone the repository in the root:
+
+    ```bash
+    git clone https://github.com/nvm-sh/nvm.git ~/.nvm
+    ```
+
+Uncomment the next lines on the .bashrc file to have it automatically sourced upon login:
+
+    ```bash
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    ```
+
+Activate `nvm` by sourcing it in the actual shell:
+
+    ```bash
+    source ~/.nvm/nvm.sh
+    ```
+    Or reopen the terminal.
