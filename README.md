@@ -2,23 +2,58 @@
 
 ### Alacritty
 
-1. [Installation](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
+[Installation](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
 
-2. Restore the configuration file:
+Restore the configuration file:
 
 ```bash
 curl --create-dirs --output ~/.config/alacritty/alacritty.toml https://raw.githubusercontent.com/ettodrzz/Cara/main/Linux/alacritty.toml
 ```
 
+### Git
+
+Install from package if it is not already installed:
+
+```bash
+sudo apt install git
+```
+
+*Check the installed version with `git --version`*.
+
+Set up the configuration file:
+    
+- Set user name and email address:
+
+```bash
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+```
+
+- Change the default editor:
+
+```bash
+git config --global core.editor nvim
+```
+
+- Change the default branch name when initializing a new repository:
+
+```bash
+git config --global init.defaultBranch main
+```
+
+*Check the configuration with `git config --list`*.
+
 ### Neovim
 
-1. Install from package:
+Install from package:
 
 ```bash
 sudo apt install neovim
 ```
 
-2. Restore the configuration file:
+*Check the installed version with `nvim --version`*.
+
+Restore the configuration file:
 
 ```bash
 curl --create-dirs --output ~/.config/nvim/init.vim https://raw.githubusercontent.com/ettodrzz/Cara/main/Linux/init.vim
@@ -26,13 +61,13 @@ curl --create-dirs --output ~/.config/nvim/init.vim https://raw.githubuserconten
 
 ### NVM
 
-1. Clone the repository in the root:
+Clone the repository in the root:
 
 ```bash
 git clone https://github.com/nvm-sh/nvm.git ~/.nvm
 ```
 
-2. Uncomment the next lines on the .bashrc file to have it automatically sourced upon login:
+Uncomment or add the next lines in the .bashrc file to have it automatically sourced upon login:
 
 ```bash
 export NVM_DIR="$HOME/.nvm"
@@ -40,10 +75,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 ```
 
-3. Activate NVM by sourcing it in the actual shell:
-
-```bash
-source ~/.nvm/nvm.sh
-```
-
-*Or reopen the terminal*.
+Reopen the terminal to get NVM ready.
