@@ -76,7 +76,7 @@ curl --create-dirs --output ~/.config/nvim/init.vim https://raw.githubuserconten
 
 ### NVM
 
-NVM stands for Node Version Manager. It is a tool that allows you to install, manage and switch between different version of Node.js.
+Stands for Node Version Manager. It is a tool that allows you to install, manage and switch between different version of Node.js.
 
 Before continuing [Git](https://github.com/ettodrzz/Cara#git) must be installed.
 
@@ -86,7 +86,7 @@ Clone the repository in the root:
 git clone https://github.com/nvm-sh/nvm.git ~/.nvm
 ```
 
-Uncomment or add the next lines in the [.bashrc](https://github.com/ettdrzz/Cara#bash) file to have it automatically sourced upon login:
+Uncomment or add the next lines in the [bashrc file](https://github.com/ettdrzz/Cara#bash) to have it automatically sourced upon login:
 
 ```bash
 export NVM_DIR="$HOME/.nvm"
@@ -96,10 +96,28 @@ export NVM_DIR="$HOME/.nvm"
 
 Reopen the terminal to get NVM ready.
 
-Download, compilate, and install the LTS (Long-Term Support) version:
+Download, compilate, and install the LTS (Long-Term Support) Node version:
 
 ```bash
 nvm install --lts
 ```
 
-*Check the installed versions of Node.js and NPM (Node Package Manager) with `node --version && npm --version`*.
+*Check the installed versions of Node and NPM (Node Package Manager) with `node --version && npm --version`*.
+
+### Rustup
+
+Is a tool that helps you install, manage, and update the Rust programming language. Tools are installed to the `~/.cargo/bin` directory, and this is where you will find the Rust toolchain, including `rustrc`, `cargo`, and `rustup`.
+
+Install from the instalation script:
+
+```bash
+curl https://sh.rustup.rs -sSf | sh -s -- --default-host x86_64-unknown-linux-gnu --default-toolchain stable --profile minimal --no-modify-path
+```
+
+Uncomment or add the next line in the [bashrc file](https://github.com/ettodrzz/Cara#bash) to have it automatically sourced upon login:
+
+```bash
+source "$HOME/.cargo/env"
+```
+
+Reopen the terminal to get Rustup ready.
