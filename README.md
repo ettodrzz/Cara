@@ -2,7 +2,41 @@
 
 ### Alacritty
 
-[Installation](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
+Before continuing [Git](https://github.com/ettodrzz/Cara#git) and [Rustup](https://github.com/ettodrzz/Cara#rustup) must be installed.
+
+Install the dependencies from the package manager:
+
+```bash
+sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+```
+
+Clone the Alacritty repository in the Downloads directory:
+
+```bash
+git clone https://github.com/alacritty/alacritty.git ~/Downloads/alacritty
+```
+
+Compile local packages and all of their dependencies:
+
+```bash
+cd ~/Downloads/alacritty
+cargo build --release
+```
+
+Install the terminfo globally:
+
+```bash
+sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+```
+
+Install the desktop entry:
+
+```bash
+sudo cp target/release/alacritty /usr/local/bin # or anywhere else in $PATH
+sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+sudo desktop-file-install extra/linux/Alacritty.desktop
+sudo update-desktop-database
+```
 
 Restore the configuration file:
 
@@ -108,7 +142,7 @@ nvm install --lts
 
 Is a tool that helps you install, manage, and update the Rust programming language. Tools are installed to the `~/.cargo/bin` directory, and this is where you will find the Rust toolchain, including `rustrc`, `cargo`, and `rustup`.
 
-Install from the instalation script:
+Install from the installation script:
 
 ```bash
 curl https://sh.rustup.rs -sSf | sh -s -- --default-host x86_64-unknown-linux-gnu --default-toolchain stable --profile minimal --no-modify-path
