@@ -4,7 +4,7 @@
 
 [Installation](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
 
-Restore the configuration file:
+**Restore the configuration file**:
 
 ```bash
 curl --create-dirs --output ~/.config/alacritty/alacritty.toml https://raw.githubusercontent.com/ettodrzz/Cara/main/Linux/alacritty.toml
@@ -12,7 +12,7 @@ curl --create-dirs --output ~/.config/alacritty/alacritty.toml https://raw.githu
 
 ### Git
 
-Install from package if it is not already installed:
+**Install from the package manager**:
 
 ```bash
 sudo apt install git
@@ -20,9 +20,9 @@ sudo apt install git
 
 *Check the installed version with `git --version`*.
 
-Set up the configuration file:
+**Set up the configuration file**:
     
-- Set user name and email address:
+- Set your user name and email address:
 
 ```bash
 git config --global user.name "John Doe"
@@ -45,7 +45,7 @@ git config --global init.defaultBranch main
 
 ### Neovim
 
-Install from package:
+**Install from the package manager**:
 
 ```bash
 sudo apt install neovim
@@ -53,7 +53,7 @@ sudo apt install neovim
 
 *Check the installed version with `nvim --version`*.
 
-Restore the configuration file:
+**Restore the configuration file**:
 
 ```bash
 curl --create-dirs --output ~/.config/nvim/init.vim https://raw.githubusercontent.com/ettodrzz/Cara/main/Linux/init.vim
@@ -61,13 +61,15 @@ curl --create-dirs --output ~/.config/nvim/init.vim https://raw.githubuserconten
 
 ### NVM
 
-Clone the repository in the root:
+Before continuing [Git](https://github.com/ettodrzz/Cara#git) must be installed.
+
+**Clone the repository in the root**:
 
 ```bash
 git clone https://github.com/nvm-sh/nvm.git ~/.nvm
 ```
 
-Uncomment or add the next lines in the .bashrc file to have it automatically sourced upon login:
+**Uncomment or add the next lines in the .bashrc file to have it automatically sourced upon login**:
 
 ```bash
 export NVM_DIR="$HOME/.nvm"
