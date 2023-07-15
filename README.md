@@ -76,6 +76,8 @@ curl --create-dirs --output ~/.config/nvim/init.vim https://raw.githubuserconten
 
 ### NVM
 
+NVM stands for Node Version Manager. It is a tool that allows you to install, manage and switch between different version of Node.js.
+
 Before continuing [Git](https://github.com/ettodrzz/Cara#git) must be installed.
 
 Clone the repository in the root:
@@ -93,3 +95,11 @@ export NVM_DIR="$HOME/.nvm"
 ```
 
 Reopen the terminal to get NVM ready.
+
+Download, compilate, and install the LTS (Long-Term Support) version:
+
+```bash
+nvm install --lts
+```
+
+*Check the installed versions of Node.js and NPM (Node Package Manager) with `node --version && npm --version`*.
