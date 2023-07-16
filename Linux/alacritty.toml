@@ -12,6 +12,9 @@ lines = 25
 x = 8
 y = 8
 
+[font]
+size = 12
+
 # Dracula theme
 [colors.primary]
 background = "#282a36"
@@ -62,7 +65,6 @@ blue = "#d6acff"
 magenta = "#ff92df"
 cyan = "#a4ffff"
 white = "#ffffff"
-
 
 [cursor.style]
 shape = "Underline"
