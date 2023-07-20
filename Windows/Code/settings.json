@@ -1,0 +1,24 @@
+{
+    "window.menuBarVisibility": "compact",
+
+    "workbench.colorTheme": "Dracula",
+    "workbench.layoutControl.enabled": false,
+    "workbench.startupEditor": "none",
+
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingDelete": "never",
+    "editor.autoClosingOvertype": "never",
+    "editor.autoClosingQuotes": "never",
+    "editor.fontFamily": "Cascadia Mono",
+    "editor.fontSize": 16,
+    "editor.fontWeight": 300,
+    "editor.minimap.renderCharacters": false,
+
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontWeight": 300,
+
+    "html.autoClosingTags": false,
+    "javascript.autoClosingTags": false,
+    "typescript.autoClosingTags": false
+}
