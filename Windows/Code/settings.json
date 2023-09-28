@@ -1,7 +1,8 @@
 {
+    "window.commandCenter": false,
     "window.menuBarVisibility": "compact",
 
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "Solarized Light",
     "workbench.layoutControl.enabled": false,
     "workbench.startupEditor": "none",
 
