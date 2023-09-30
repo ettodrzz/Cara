@@ -45,7 +45,3 @@ winget uninstall id.example
 ```
 
 [`↗ Más comandos e información`](https://learn.microsoft.com/en-us/windows/package-manager/winget/#commands)
-
-----
-
-[`↑ Volver arriba`](#winget)
