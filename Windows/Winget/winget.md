@@ -1,4 +1,4 @@
-[`↗ | Regresar al índice`](https://github.com/ettodrzz/Cara/tree/main#índice)
+[`↗ Regresar al índice`](https://github.com/ettodrzz/Cara/tree/main#índice)
 
 # [Winget](https://learn.microsoft.com/en-us/windows/package-manager)
 
@@ -46,8 +46,8 @@ winget list --name "app example"
 winget uninstall id.example
 ```
 
-[`↗ | Más comandos e información`](https://learn.microsoft.com/en-us/windows/package-manager/winget/#commands)
+[`↗ Más comandos e información`](https://learn.microsoft.com/en-us/windows/package-manager/winget/#commands)
 
 ----
 
-[`↑ | Volver arriba`](#winget)
+[`↑ Volver arriba`](#winget)
