@@ -1,5 +1,3 @@
-[`↗ Regresar al índice`](https://github.com/ettodrzz/Cara/tree/main#índice)
-
 # [Winget](https://learn.microsoft.com/en-us/windows/package-manager)
 
 Es el [administrador de paquetes](https://en.wikipedia.org/wiki/Package_manager) de Windows. Su función es instalar, configurar o desinstalar programas desde la terminal.
