@@ -6,7 +6,7 @@ Es como un administrador de [interfaces de línea de comandos](https://en.wikipe
 
 Se puede instalar desde la Microsoft Store.
 
-[`↗ Windows Terminal`](ms-windows-store://pdp?productid=9N0DX20HK701&mode=mini)
+<a href="ms-windows-store://pdp?productid=9N0DX20HK701&mode=mini">`↗ Windows Terminal`</a>
 
 Otra opción de hacerlo es con [winget](https://github.com/ettodrzz/Cara/blob/main/Windows/Winget/winget.md).
 
