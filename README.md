@@ -11,5 +11,6 @@ Espero que esto sea un recurso de apoyo para ser más productivo y seguir aprend
 ### Windows
 
 - [Winget](https://github.com/ettodrzz/Cara/blob/main/Windows/Winget/winget.md)
+- [Windows Terminal](https://github.com/ettodrzz/Cara/blob/main/Windows/WT/wt.md)
 
 ### Linux
