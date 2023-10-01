@@ -24,8 +24,6 @@ Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller
 
 Para empezar a usar winget, antes se tienen que aceptar algunos [términos de la Microsoft Store](https://aka.ms/microsoft-store-terms-of-transaction). Tan simple como escribir la letra `Y` para aceptar estos términos.
 
-![Microsoft Store agreements](./winget-ss-1.webp)
-
 La sintaxis es sencilla, a continuación se muestran algunos ejemplos de como usarlo:
 
 ```powershell
