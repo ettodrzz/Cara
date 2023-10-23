@@ -6,7 +6,7 @@
 
 <img src= "./git-1.gif" alt = "Demostración de Git y Moar." width = 75% max-width = 920px>
 
-Este repositorio contiene un script para administrar estos programas.
+Este repositorio contiene un [script](https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.ps1) para administrar estos programas.
 
 # Índice
 
@@ -39,7 +39,7 @@ Se puede usar el scope `Process` si se quiere hacer el cambio sólo en la sesió
 
 # Instalación
 
-### Script
+### [Script](https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.ps1)
 
 La forma más rápida de instalar ambos programas es con el siguiente comando.
 
@@ -51,7 +51,7 @@ Guardará los archivos ejecutables en `%LocalAppData$\Programs` y le creará sus
 
 # Actualización
 
-### Script
+### [Script](https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.ps1)
 
 Si anteriormente se instalaron ambos programas de forma correcta con el mismo script, al ejecutarlo otra vez, descargará nuevas versiones de Git y Moar.
 
@@ -61,7 +61,7 @@ irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git.p
 
 # Eliminación
 
-### Script
+### [Script](https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.ps1)
 
 Si anteriormente se instalaron ambos programas de forma correcta con el mismo script. También se puede usar para eliminar estos programas, tan sólo es agregarle el parámetro `-Remove` o `-R`.
 
