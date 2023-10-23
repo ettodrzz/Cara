@@ -4,7 +4,7 @@
 
 **Moar** es un [paginador](https://en.wikipedia.org/wiki/Terminal_pager), que sirve para leer textos largos en la terminal de una forma más cómoda (como el de `git log`). ¿Por qué no simplemente usar [less](https://github.com/jftuga/less-Windows)? Bueno... Moar por defecto es más legible, por ejemplo, se le puede pasar el parámetro `--no-clear-on-exit` y no romperá los textos anteriores de la terminal.
 
-<img src= "./git-1.gif" alt = "Demostración de Git y Moar." width = 75% max-width = 920px style = "display: block; margin-left: auto; margin-right: auto">
+<div style = "text-align: center"><img src= "./git-1.gif" alt = "Demostración de Git y Moar." width = 75% max-width = 920px></div>
 
 Este repositorio contiene un script para administrar estos programas.
 
@@ -35,7 +35,7 @@ El comando a continuación cambia la directiva de ejecución a *RemoteSigned* en
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-Se puede usar el scope `Process` si se quiere hacer el cambio sólo en la sesión actual de PowerShell, la directiva se eliminaría cuando se cierre la shell.
+Se puede usar el scope `Process` si se quiere hacer el cambio sólo en la sesión actual de PowerShell, la directiva de ejecución se eliminaría cuando se cierre la shell.
 
 # Instalación
 
@@ -53,7 +53,7 @@ Guardará los archivos ejecutables en `%LocalAppData$\Programs` y le creará sus
 
 ### Script
 
-Si anteriormente se instalaron ambos programas de forma correcta con el mismo script, ejecutarlo otra vez hará que busque y descargue nuevas versiones de Git y Moar.
+Si anteriormente se instalaron ambos programas de forma correcta con el mismo script, al ejecutarlo otra vez, descargará nuevas versiones de Git y Moar.
 
 ```powershell
 irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git.ps1" -OutFile "$Env:Temp\git.ps1"; .$Env:Temp\git.ps1
@@ -69,4 +69,4 @@ Si anteriormente se instalaron ambos programas de forma correcta con el mismo sc
 irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git.ps1" -OutFile "$Env:Temp\git.ps1"; .$Env:Temp\git.ps1 -Remove
 ```
 
-Eliminará los archivos ejecutables que están en `%LocalAppData$\Programs` y las rutas que están en la variable de entorno Path del usuario actual.
+Eliminará los archivos ejecutables que están en `%LocalAppData$\Programs` y las rutas que están en la [variable de entorno](https://en.wikipedia.org/wiki/Environment_variable#Assignment:_DOS,_OS/2_and_Windows) Path del usuario actual.
