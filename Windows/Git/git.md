@@ -4,17 +4,38 @@
 
 **Moar** es un [paginador](https://en.wikipedia.org/wiki/Terminal_pager), que sirve para leer textos largos en la terminal de una forma más cómoda (como el de `git log`). ¿Por qué no simplemente usar [less](https://github.com/jftuga/less-Windows)? Bueno... Moar por defecto es más legible, por ejemplo, se le puede pasar el parámetro `--no-clear-on-exit` y no romperá los textos anteriores de la terminal.
 
-<img src= "./git-1.gif" alt = "Demostración de Git y Moar." width = "50%">
+<img src= "./git-1.gif" alt = "Demostración de Git y Moar." width = 75% max-width = 920px style = "display: block; margin-left: auto; margin-right: auto">
+
+Este repositorio contiene un script para administrar estos programas.
 
 # Índice
 
 - Administración
+    - [Requisito previo](#requisito-previo)
     - [Instalación](#instalación)
     - [Actualización](#actualización)
     - [Eliminación](#eliminación)
 - Uso
     - Configuración
     - GitHub SSH
+
+# Requisito previo
+
+Si se va a ejecutar el script, antes de eso, la [directiva de ejecución](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1) debe estar puesta en `RemoteSigned` o `Unrestricted`.
+
+Se puede revisar cuál es la directiva de ejecución actual con:
+
+```powershell
+Get-ExecutionPolicy
+```
+
+El comando a continuación cambia la directiva de ejecución a *RemoteSigned* en el usuario actual.
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+Se puede usar el scope `Process` si se quiere hacer el cambio sólo en la sesión actual de PowerShell, la directiva se eliminaría cuando se cierre la shell.
 
 # Instalación
 
@@ -26,7 +47,7 @@ La forma más rápida de instalar ambos programas es con el siguiente comando.
 irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git.ps1" -OutFile "$Env:Temp\git.ps1"; .$Env:Temp\git.ps1
 ```
 
-*Guardará los archivos ejecutables en `%LocalAppData$\Programs` y le creará sus rutas en la [variable de entorno](https://en.wikipedia.org/wiki/Environment_variable#Assignment:_DOS,_OS/2_and_Windows) Path del usuario actual*.
+Guardará los archivos ejecutables en `%LocalAppData$\Programs` y le creará sus rutas en la [variable de entorno](https://en.wikipedia.org/wiki/Environment_variable#Assignment:_DOS,_OS/2_and_Windows) Path del usuario actual.
 
 # Actualización
 
@@ -48,4 +69,4 @@ Si anteriormente se instalaron ambos programas de forma correcta con el mismo sc
 irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git.ps1" -OutFile "$Env:Temp\git.ps1"; .$Env:Temp\git.ps1 -Remove
 ```
 
-*Eliminará los archivos ejecutables que están en `%LocalAppData$\Programs` y las rutas que están en la variable de entorno Path del usuario actual*.
+Eliminará los archivos ejecutables que están en `%LocalAppData$\Programs` y las rutas que están en la variable de entorno Path del usuario actual.
