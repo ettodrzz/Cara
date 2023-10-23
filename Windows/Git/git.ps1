@@ -9,7 +9,7 @@ Both programs are installed for the current user.
 .PARAMETER Remove
 Deletes the installed versions of Git and Moar.
 .LINK
-https://github.com/ettodrzz/Cara
+https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md
 #>
 
 # ┌──────────┐
@@ -222,7 +222,7 @@ if (($Remove) -and ($Args.Count -eq 0))
             catch
             {
                 Write-Host ""
-                Write-Host "$RedSign" "Something went wrong. Visit ... to see how to uninstall manually."
+                Write-Host "$RedSign" "Something went wrong. Visit https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md to see how to uninstall manually."
             }
         }
         else
@@ -279,7 +279,7 @@ elseif ($Args.Count -eq 0)
                 catch
                 {
                     Write-Host ""
-                    Write-Host "$RedSign" "Something went wrong. Visit ... to see how to update manually."
+                    Write-Host "$RedSign" "Something went wrong. Visit https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md to see how to update manually."
                     Print-LocalVersions
                 }
             }
@@ -325,7 +325,7 @@ elseif ($Args.Count -eq 0)
             catch
             {
                 Write-Host ""
-                Write-Host "$RedSign" "Something went wrong. Visit ... to see how to install manually."
+                Write-Host "$RedSign" "Something went wrong. Visit https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md to see how to install manually."
             }
         }
         else
