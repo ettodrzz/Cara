@@ -6,4 +6,46 @@
 
 <img src= "./git-1.gif" alt = "Demostración de Git y Moar." width = "50%">
 
-El siguiente script de PowerShell funciona para instalar, actualizar o eliminar ambos programas de una forma más cómoda.
+# Índice
+
+- Administración
+    - [Instalación](#instalación)
+    - [Actualización](#actualización)
+    - [Eliminación](#eliminación)
+- Uso
+    - Configuración
+    - GitHub SSH
+
+# Instalación
+
+### Script
+
+La forma más rápida de instalar ambos programas es con el siguiente comando.
+
+```powershell
+irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git.ps1" -OutFile "$Env:Temp\git.ps1"; .$Env:Temp\git.ps1
+```
+
+*Guardará los archivos ejecutables en `%LocalAppData$\Programs` y le creará sus rutas en la [variable de entorno](https://en.wikipedia.org/wiki/Environment_variable#Assignment:_DOS,_OS/2_and_Windows) Path del usuario actual*.
+
+# Actualización
+
+### Script
+
+Si anteriormente se instalaron ambos programas de forma correcta con el mismo script, ejecutarlo otra vez hará que busque y descargue nuevas versiones de Git y Moar.
+
+```powershell
+irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git.ps1" -OutFile "$Env:Temp\git.ps1"; .$Env:Temp\git.ps1
+```
+
+# Eliminación
+
+### Script
+
+Si anteriormente se instalaron ambos programas de forma correcta con el mismo script. También se puede usar para eliminar estos programas, tan sólo es agregarle el parámetro `-Remove` o `-R`.
+
+```powershell
+irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git.ps1" -OutFile "$Env:Temp\git.ps1"; .$Env:Temp\git.ps1 -Remove
+```
+
+*Eliminará los archivos ejecutables que están en `%LocalAppData$\Programs` y las rutas que están en la variable de entorno Path del usuario actual*.
