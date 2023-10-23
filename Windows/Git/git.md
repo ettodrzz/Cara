@@ -4,7 +4,7 @@
 
 **Moar** es un [paginador](https://en.wikipedia.org/wiki/Terminal_pager), que sirve para leer textos largos en la terminal de una forma más cómoda (como el de `git log`). ¿Por qué no simplemente usar [less](https://github.com/jftuga/less-Windows)? Bueno... Moar por defecto es más legible, por ejemplo, se le puede pasar el parámetro `--no-clear-on-exit` y no romperá los textos anteriores de la terminal.
 
-<div style = "text-align: center"><img src= "./git-1.gif" alt = "Demostración de Git y Moar." width = 75% max-width = 920px></div>
+<img src= "./git-1.gif" alt = "Demostración de Git y Moar." width = 75% max-width = 920px>
 
 Este repositorio contiene un script para administrar estos programas.
 
