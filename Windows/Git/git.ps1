@@ -1,32 +1,44 @@
-# Script v0.4 │ https://github.com/ettodrzz
+<#
+.SYNOPSIS
+Git for Windows Manager (v0.5).
+.DESCRIPTION
+Downloads, installs or removes Git.
+MinGit is a simple version of Git, without extra features like Git-Bash and Git-Gui.
+Also Moar is included, a really good pager.
+Both programs are installed for the current user.
+.PARAMETER Remove
+Deletes the installed versions of Git and Moar.
+.LINK
+https://github.com/ettodrzz/Cara
+#>
 
 # ┌──────────┐
 # │ Contents │
 # └──────────┘
 
-# [Parameters] .......................... 32
+# [Parameters] .......................... 44
 
-# [Variables] ........................... 42
+# [Variables] ........................... 55
 
 # [Functions]
 # ├─ Directories 
-# │  └┬─ Check-Directories .............. 56
-# │   └─ Delete-Directories ............. 52
+# │  └┬─ Check-Directories .............. 69
+# │   └─ Delete-Directories ............. 77
 # ├─ Paths
-# │  └┬─ Check-Paths .................... 61
-# │   ├─ Add-Paths ...................... 70
-# │   └─ Remove-Paths ................... 77
+# │  └┬─ Check-Paths .................... 86
+# │   ├─ Add-Paths ...................... 95
+# │   └─ Remove-Paths ................... 102
 # ├─ Versions
-# │  └┬─ Print-LocalVersions ............ 87
+# │  └┬─ Print-LocalVersions ............ 112
 # │   └─ Repositories
-# │      └┬─ Get-GitRepoVersion ......... 97
-# │       └─ Get-MoarRepoVersion ........ 109
+# │      └┬─ Get-GitRepoVersion ......... 122
+# │       └─ Get-MoarRepoVersion ........ 134
 # ├─ Downloads
-# │  └┬─ Download-Git ................... 126
-# │   └─ Download-Moar .................. 135
-# └─ Prompt-Continue .................... 144
+# │  └┬─ Download-Git ................... 151
+# │   └─ Download-Moar .................. 160
+# └─ Prompt-Continue .................... 169
 
-# [Execution] ........................... 168
+# [Execution] ........................... 192
 
 # ┌────────────┐
 # │ Parameters │
@@ -34,6 +46,7 @@
 
 Param
 (
+    [Parameter(ValueFromPipeline)]
     [Alias("R")]
     [Switch]$Remove
 )
