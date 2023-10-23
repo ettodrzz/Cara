@@ -1,14 +1,16 @@
-# Script v0.3 │ https://github.com/ettodrzz
+# Script v0.4 │ https://github.com/ettodrzz
 
 # ┌──────────┐
 # │ Contents │
 # └──────────┘
 
-# [Variables] ........................... 30
+# [Parameters] .......................... 32
+
+# [Variables] ........................... 42
 
 # [Functions]
 # ├─ Directories 
-# │  └┬─ Check-Directories .............. 44
+# │  └┬─ Check-Directories .............. 56
 # │   └─ Delete-Directories ............. 52
 # ├─ Paths
 # │  └┬─ Check-Paths .................... 61
@@ -25,6 +27,16 @@
 # └─ Prompt-Continue .................... 144
 
 # [Execution] ........................... 168
+
+# ┌────────────┐
+# │ Parameters │
+# └────────────┘
+
+Param
+(
+    [Alias("R")]
+    [Switch]$Remove
+)
 
 # ┌───────────┐
 # │ Variables │
@@ -128,7 +140,7 @@ Function Download-Git
     $GitRepoVersion = Get-GitRepoVersion
     Invoke-WebRequest -Uri "https://github.com/git-for-windows/git/releases/download/v$GitRepoVersion/MinGit-$($GitRepoVersion -replace '.windows', '')-64-bit.zip" -OutFile "$Env:Temp\MinGit.zip"
     Expand-Archive -Path "$Env:Temp\MinGit.zip" -DestinationPath "$Env:LocalAppData\Programs\Git" -Force
-    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/MoarGit/gitconfig" -OutFile "$Env:LocalAppData\Programs\Git\etc\gitconfig"
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/gitconfig" -OutFile "$Env:LocalAppData\Programs\Git\etc\gitconfig"
 }
 # ┌─ Downloads the latest version of Moar from its repository.
 # │  Saves moar.exe and its license in %LocalAppData%\Programs\Moar.
@@ -167,7 +179,7 @@ Function Prompt-Continue
 # │ Execution │
 # └───────────┘
 
-if (($Args.Count -eq 1) -and (($Args[0] -eq "Remove") -or ($Args[0] -eq "R")))
+if (($Remove) -and ($Args.Count -eq 0))
 {
     $Directories = Check-Directories
     $Paths = Check-Paths
@@ -192,12 +204,12 @@ if (($Args.Count -eq 1) -and (($Args[0] -eq "Remove") -or ($Args[0] -eq "R")))
                     [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine) +
                     [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::User)
                 Write-Host "$GreenSign" "Done."
-                Write-Host "$YellowSign" "It's necessary to restart other applications so that they stop using the Git and Moar paths, E.g. Visual Studio Code."
+                Write-Host "$YellowSign" "Other apps may need to be restarted to stop using Git and Moar paths."
             }
             catch
             {
                 Write-Host ""
-                Write-Host "$RedSign" "Something went wrong. Visit https://github.com/ettodrzz/Cara to see how to uninstall manually."
+                Write-Host "$RedSign" "Something went wrong. Visit ... to see how to uninstall manually."
             }
         }
         else
@@ -254,7 +266,7 @@ elseif ($Args.Count -eq 0)
                 catch
                 {
                     Write-Host ""
-                    Write-Host "$RedSign" "Something went wrong. Visit https://github.com/ettodrzz/Cara to see how to update manually."
+                    Write-Host "$RedSign" "Something went wrong. Visit ... to see how to update manually."
                     Print-LocalVersions
                 }
             }
@@ -294,12 +306,13 @@ elseif ($Args.Count -eq 0)
                     [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine) +
                     [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::User)
                 Write-Host "$GreenSign" "Done."
-                Write-Host "$YellowSign" "Other apps need to be restarted to start using Git and Moar, E.g. Visual Studio Code."
+                Write-Host "$YellowSign" "May need to restart other applications to start using Git and Moar."
+                Print-LocalVersions
             }
             catch
             {
                 Write-Host ""
-                Write-Host "$RedSign" "Something went wrong. Visit https://github.com/ettodrzz/Cara to see how to install manually."
+                Write-Host "$RedSign" "Something went wrong. Visit ... to see how to install manually."
             }
         }
         else
@@ -311,5 +324,12 @@ elseif ($Args.Count -eq 0)
 }
 else
 {
-    Write-Host "$RedSign" "Argument not valid."
+    if ($Args.Count -eq 1)
+    {
+        Write-Host "$RedSign" "Parameter not valid."
+    }
+    else
+    {
+        Write-Host "$RedSign" "Parameters not valid."
+    }
 }
