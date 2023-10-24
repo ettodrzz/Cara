@@ -35,7 +35,7 @@ El comando a continuación cambia la directiva de ejecución a *RemoteSigned* en
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-Se puede usar el scope `Process` si se quiere hacer el cambio sólo en la sesión actual de PowerShell, la directiva de ejecución se eliminaría cuando se cierre la shell.
+Se puede usar el scope `Process` si se quiere hacer el cambio sólo en la sesión actual de PowerShell, la directiva de ejecución se eliminaría cuando se cierre el shell.
 
 # Instalación
 
@@ -49,6 +49,29 @@ irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git.p
 
 Guardará los archivos ejecutables en `%LocalAppData$\Programs` y le creará sus rutas en la [variable de entorno](https://en.wikipedia.org/wiki/Environment_variable#Assignment:_DOS,_OS/2_and_Windows) Path del usuario actual.
 
+### Manual
+
+Para instalar estos programas con la interfaz gráfica, hay que seguir los pasos:
+
+- Guardar los archivos
+    - Git
+        1. Descargar la [última versión](https://github.com/git-for-windows/git/releases/latest) (MinGit-[...]-bit.zip)
+        2. Hacer clic-derecho en el archivo descargado, y seleccionar `Extract All...`
+        3. Extraer los archivos en *C:\Users\\[UserName]\AppData\Local\Programs\Git*
+    - Moar
+        1. Descargar la [última versión](https://github.com/walles/moar/releases/latest) (moar-v[...]-windows-amd64.exe)
+        2. Renombrar el archivo descargado como *moar.exe*
+        3. Mover este archivo a *C:\Users\\[UserName]\AppData\Local\Programs\Moar*
+- Crear las rutas en la variable de entorno Path
+    1. Abrir [Windows Run](https://es.wikipedia.org/wiki/Comando_Ejecutar) (presionando simultáneamente `Win` + `R`)
+    2. Escribir *SystemPropertiesAdvanced*, y presionar `Enter`
+    3. Seleccionar `Environment Variables...`
+    4. En *User variables for [UserName]*, hacer doble-clic en *Path*
+    5. Seleccionar `New`, y escribir *%LocalAppData%\Programs\Git\mingw64\bin*
+    6. Seleccionar `New`, y escribir *%LocalAppData%\Programs\Moar*
+    7. Guardar los cambios
+- Reiniciar el shell para recargar la rutas en la variable de entorno Path
+
 # Actualización
 
 ### [Script](https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.ps1)
@@ -58,6 +81,19 @@ Si anteriormente se instalaron ambos programas de forma correcta con el mismo sc
 ```powershell
 irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git.ps1" -OutFile "$Env:Temp\git.ps1"; .$Env:Temp\git.ps1
 ```
+
+### Manual
+
+Para actualizar estos programas con la interfaz gráfica, hay que seguir los pasos:
+
+- Git
+    1. Descargar la [última versión](https://github.com/git-for-windows/git/releases/latest) (MinGit-[...]-bit.zip)
+    2. Hacer clic-derecho en el archivo descargado, y seleccionar `Extract All...`
+    3. Extraer los archivos en *C:\Users\\[UserName]\AppData\Local\Programs\Git*
+- Moar
+    1. Descargar la [última versión](https://github.com/walles/moar/releases/latest) (moar-v[...]-windows-amd64.exe)
+    2. Renombrar el archivo descargado como *moar.exe*
+    3. Mover este archivo a *C:\Users\\[UserName]\AppData\Local\Programs\Moar*
 
 # Eliminación
 
@@ -70,3 +106,18 @@ irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git.p
 ```
 
 Eliminará los archivos ejecutables que están en `%LocalAppData$\Programs` y las rutas que están en la [variable de entorno](https://en.wikipedia.org/wiki/Environment_variable#Assignment:_DOS,_OS/2_and_Windows) Path del usuario actual.
+
+### Manual
+
+Para desinstalar estos programas con la interfaz gráfica, hay que seguir los pasos:
+
+- Eliminar los archivos
+    1. Eliminar las carpetas *C:\Users\\[UserName]\AppData\Local\Programs\Git* y *C:\Users\\[UserName]\AppData\Local\Programs\Moar*
+- Quitar las rutas en la variable de entorno Path
+    1. Abrir [Windows Run](https://es.wikipedia.org/wiki/Comando_Ejecutar) (presionando simultáneamente `Win` + `R`)
+    2. Escribir *SystemPropertiesAdvanced*, y presionar `Enter`
+    3. Seleccionar `Environment Variables...`
+    4. En *User variables for [UserName]*, hacer doble-clic en *Path*
+    5. Eliminar las rutas *%LocalAppData%\Programs\Git\mingw64\bin* y *%LocalAppData%\Programs\Moar*
+    7. Guardar los cambios
+- Reiniciar el shell para recargar la rutas en la variable de entorno Path
