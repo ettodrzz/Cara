@@ -17,8 +17,6 @@
 
 [↗ Moar](https://github.com/walles/moar "Repositorio de Moar") es un paginador, sirve para leer textos largos en la terminal de una forma más cómoda (como el de `git log`). ¿Por qué no simplemente usar [↗ Less](https://github.com/jftuga/less-Windows "Repositorio de Less")?... Moar es más legible, por ejemplo, se le puede pasar el parámetro `--no-clear-on-exit` y no romperá los anteriores textos en la terminal.
 
-<img src= "./git-1.gif" alt = "Demostración de Git y Moar." width = 75% max-width = 920px>
-
 Escribí un [↗ script de PowerShell para administrar Git y Moar](https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.ps1 "Código del script"). Su función es instalar, actualizar o eliminar estos programas (compatible sólo con Windows de 64 bits).
 
 # Requisito previo
