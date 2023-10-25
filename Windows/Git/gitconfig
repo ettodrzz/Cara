@@ -1,5 +1,3 @@
 [core]
     editor = notepad
     pager = moar --wrap --quit-if-one-screen --no-clear-on-exit
-[init]
-    defaultBranch = main
