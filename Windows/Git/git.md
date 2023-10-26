@@ -17,7 +17,7 @@
 
 [↗ Moar](https://github.com/walles/moar "Repositorio de Moar") es un paginador, sirve para leer textos largos en la terminal de una forma más cómoda (como el de `git log`). ¿Por qué no simplemente usar [↗ Less](https://github.com/jftuga/less-Windows "Repositorio de Less")?... Moar es más legible, por ejemplo, se le puede pasar el parámetro `--no-clear-on-exit` y no romperá los anteriores textos en la terminal.
 
-Escribí un [↗ script de PowerShell para administrar Git y Moar](https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.ps1 "Código del script"). Su función es instalar, actualizar o eliminar estos programas (compatible sólo con Windows de 64 bits).
+Escribí un [↗ script de PowerShell para administrar Git y Moar](https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git-es.ps1 "Código del script"). Su función es instalar, actualizar o eliminar estos programas (compatible sólo con Windows de 64 bits).
 
 # Requisito previo
 
@@ -46,7 +46,7 @@ Esta es la forma más rápida de guardar los archivos ejecutables de Git y Moar 
 Ejecutar el script:
 
 ```powershell
-irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git.ps1" -OutFile "$Env:Temp\git.ps1"; .$Env:Temp\git.ps1
+irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git-es.ps1" -OutFile "$Env:Temp\git-es.ps1"; .$Env:Temp\git-es.ps1
 # Este comando descarga el script en la carpeta de archivos temporales, después lo ejecuta.
 ```
 
@@ -82,7 +82,7 @@ Si anteriormente se instalaron ambos programas de forma correcta con el mismo sc
 Ejecutar el script:
 
 ```powershell
-irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git.ps1" -OutFile "$Env:Temp\git.ps1"; .$Env:Temp\git.ps1
+irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git-es.ps1" -OutFile "$Env:Temp\git-es.ps1"; .$Env:Temp\git-es.ps1
 # Este comando descarga el script en la carpeta de archivos temporales, después lo ejecuta.
 ```
 
@@ -108,7 +108,7 @@ Si anteriormente se instalaron ambos programas de forma correcta con el mismo sc
 Ejecutar el script:
 
 ```powershell
-irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git.ps1" -OutFile "$Env:Temp\git.ps1"; .$Env:Temp\git.ps1 -Remove
+irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git-es.ps1" -OutFile "$Env:Temp\git-es.ps1"; .$Env:Temp\git-es.ps1 -Remove
 # Este comando descarga el script en la carpeta de archivos temporales, después lo ejecuta.
 ```
 
@@ -156,7 +156,7 @@ git config --global user.email johndoe@example.com
 
 ### Nombre de la rama inicial
 
-Una buena practica es usar el nombre "main" para la rama principal en repositorios nuevos, esto para cumplir con las [directrices de la comunidad](https://sfconservancy.org/news/2020/jun/23/gitbranchname/ "¿Por qué Main?").
+Cuando se crea un nuevo repositorio, una buena practica es usar el nombre "main" para la rama principal, esto para cumplir con las [↗ directrices de la comunidad](https://sfconservancy.org/news/2020/jun/23/gitbranchname/ "¿Por qué Main?").
 
 ```powershell
 git config --global init.defaultBranch main
