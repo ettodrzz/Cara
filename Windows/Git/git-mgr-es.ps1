@@ -204,7 +204,7 @@ if (($Remove) -and ($Args.Count -eq 0))
         Write-Host "$GreenSign" "Instalaci$([char]0xF3)n encontrada."
         Print-LocalVersions
         Write-Host ""
-        Write-Host "¿Desinstalar?"
+        Write-Host "$([char]0xBF)Desinstalar?"
         $PromptAnswer = Prompt-Continue
         if ($PromptAnswer -eq $True)
         {
@@ -258,7 +258,7 @@ elseif ($Args.Count -eq 0)
         if ($GitUpdateAvailable -or $MoarUpdateAvailable)
         {
             Write-Host ""
-            Write-Host "¿Actualizar?"
+            Write-Host "$([char]0xBF)Actualizar?"
             $PromptAnswer = Prompt-Continue
             if ($PromptAnswer -eq $True)
             {
@@ -304,7 +304,7 @@ elseif ($Args.Count -eq 0)
         $MoarRepoVersion = Get-MoarRepoVersion
         Write-Host "$YellowSign" "Git ($GitRepoVersion) y Moar ($MoarRepoVersion) ser$([char]0xE1)n instalados."
         Write-Host ""
-        Write-Host "¿Instalar?"
+        Write-Host "$([char]0xBF)Instalar?"
         $PromptAnswer = Prompt-Continue
         if ($PromptAnswer -eq $True)
         {
