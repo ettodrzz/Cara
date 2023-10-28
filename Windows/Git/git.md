@@ -13,7 +13,7 @@
 
 ### Acerca de
 
-[↗ Git](https://github.com/git-for-windows/git "Repositorio de Git") es un sistema de control de versiones, creado por Linus Torvalds (Sí, el ingeniero que también desarrolló el kernel de Linux). En palabras más simples, es como una máquina del tiempo para nuestro código o proyecto, por eso es tan importante. Aquí muestro como descargar MinGit, es una versión liviana, sin programas extras como Git BASH y Git GUI, usable desde PowerShell.
+[↗ Git](https://github.com/git-for-windows/git "Repositorio de Git") es un sistema de control de versiones, creado por Linus Torvalds (Sí, el ingeniero que también desarrolló el kernel de Linux). En palabras más simples, es como una máquina del tiempo para nuestro código o proyecto, por eso es tan importante. Aquí muestro como descargar MinGit, una versión liviana, sin programas extras como Git BASH y Git GUI, usable desde PowerShell.
 
 [↗ Moar](https://github.com/walles/moar "Repositorio de Moar") es un paginador, sirve para leer textos largos en la terminal de una forma más cómoda (como el de `git log`). ¿Por qué no simplemente usar [↗ Less](https://github.com/jftuga/less-Windows "Repositorio de Less")?... Moar es más legible, por ejemplo, se le puede pasar el parámetro `--no-clear-on-exit` y no romperá los anteriores textos en la terminal.
 
@@ -33,7 +33,7 @@ Get-ExecutionPolicy
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-# Este comando cambia la directiva de ejecución a RemoteSigned en el usuario actual.
+# Cambia la directiva de ejecución a RemoteSigned en el usuario actual.
 # También se puede usar el scope Process si se quiere hacer el cambio sólo en la sesión actual de PowerShell.
 ```
 
@@ -47,7 +47,7 @@ Ejecutar el script:
 
 ```powershell
 irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git-es.ps1" -OutFile "$Env:Temp\git-es.ps1"; .$Env:Temp\git-es.ps1
-# Este comando descarga el script en la carpeta de archivos temporales, después lo ejecuta.
+# Descarga el script en la carpeta de archivos temporales, después lo ejecuta.
 ```
 
 ### Manual
@@ -83,7 +83,7 @@ Ejecutar el script:
 
 ```powershell
 irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git-es.ps1" -OutFile "$Env:Temp\git-es.ps1"; .$Env:Temp\git-es.ps1
-# Este comando descarga el script en la carpeta de archivos temporales, después lo ejecuta.
+# Descarga el script en la carpeta de archivos temporales, después lo ejecuta.
 ```
 
 ### Manual
@@ -109,7 +109,7 @@ Ejecutar el script:
 
 ```powershell
 irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git-es.ps1" -OutFile "$Env:Temp\git-es.ps1"; .$Env:Temp\git-es.ps1 -Remove
-# Este comando descarga el script en la carpeta de archivos temporales, después lo ejecuta.
+# Descarga el script en la carpeta de archivos temporales, después lo ejecuta.
 ```
 
 ### Manual
@@ -164,3 +164,29 @@ git config --global init.defaultBranch main
 ```
 
 # GitHub SSH
+
+Es un método de autenticación seguro que permite conectarse a GitHub sin tener que introducir una contraseña cada vez.
+
+1. Crear una nueva llave:
+
+```powershell
+ssh-keygen -t ed25519 -C johndoe@example.com
+# Genera dos llaves, una pública y otra privada
+```
+
+2. Copiar la llave pública en el Portapapeles de Windows:
+
+```powershell
+Get-Content $Home\.ssh\id_ed25519.pub | clip
+```
+
+3. Ir a la configuración [↗ Add new SSH Key](https://github.com/settings/ssh/new "Acceso directo a la configuración") de GitHub.
+    - En `Title`, escribir algo que haga referencia a donde se usaría la llave, por ejemplo, *Escritorio Personal*.
+    - En `Key`, pegar la llave.
+    - Guardar cambios.
+
+4. Comprobar la conexión:
+
+```powershell
+ssh -T git@github.com
+```
