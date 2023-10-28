@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Git for Windows Manager (v0.5).
+Git for Windows Manager (v0.6).
 .DESCRIPTION
 Downloads, installs or removes Git.
 MinGit is a simple version of Git, without extra features like Git-Bash and Git-Gui.
@@ -115,7 +115,7 @@ Function Remove-Paths
 Function Print-LocalVersions
 {
     Write-Host ""
-    Write-Host "Installed versions:"
+    Write-Host "Versiones instaladas:"
     git --version
     Write-Host "moar $(moar --version)"
 }
@@ -171,12 +171,12 @@ Function Download-Moar
 # ┌─ Asks the user if they want to continue with the script.
 Function Prompt-Continue
 {
-    Write-Host "[Y]Yes " -ForegroundColor Yellow -NoNewLine
+    Write-Host "[S]Sí " -ForegroundColor Yellow -NoNewLine
     Write-Host "[N]No: " -NoNewLine
     do
     {
         $PromptOption = Read-Host
-        if (($PromptOption -eq "") -or ($PromptOption -eq "Y") -or ($PromptOption -eq "Yes"))
+        if (($PromptOption -eq "") -or ($PromptOption -eq "S") -or ($PromptOption -eq "Si") -or ($PromptOption -eq "Sí"))
         {
             return $True
         }
@@ -186,9 +186,9 @@ Function Prompt-Continue
         }
         else
         {
-            Write-Host "$RedSign" "Retype a valid option: " -NoNewLine
+            Write-Host "$RedSign" "Vuelve a escribir una opción valida: " -NoNewLine
         }
-    } while ($PromptOption -notin @("", "Y", "Yes", "N", "No"))
+    } while ($PromptOption -notin @("", "S", "Si", "Sí", "N", "No"))
 }
 
 # ┌───────────┐
@@ -201,42 +201,42 @@ if (($Remove) -and ($Args.Count -eq 0))
     $Paths = Check-Paths
     if ($Directories -and $Paths)
     {
-        Write-Host "$GreenSign" "Installation found."
+        Write-Host "$GreenSign" "Instalación encontrada."
         Print-LocalVersions
         Write-Host ""
-        Write-Host "Uninstall?"
+        Write-Host "¿Desinstalar?"
         $PromptAnswer = Prompt-Continue
         if ($PromptAnswer -eq $True)
         {
             try
             {
                 Write-Host ""
-                Write-Host "Deleting directories..."
+                Write-Host "Borrando carpetas..."
                 Delete-Directories
-                Write-Host "Removing paths..."
+                Write-Host "Quitando rutas..."
                 Remove-Paths
-                Write-Host "Refreshing paths in the current shell..."
+                Write-Host "Actualizando las rutas en el shell actual..."
                 $Env:Path =
                     [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine) +
                     [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::User)
-                Write-Host "$GreenSign" "Done."
-                Write-Host "$YellowSign" "Other apps may need to be restarted to stop using Git and Moar paths."
+                Write-Host "$GreenSign" "Hecho."
+                Write-Host "$YellowSign" "Quizá otras aplicaciones necesiten ser reiniciadas para que dejen de usar la rutas de Git y Moar."
             }
             catch
             {
                 Write-Host ""
-                Write-Host "$RedSign" "Something went wrong. Visit https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md to see how to uninstall manually."
+                Write-Host "$RedSign" "Algo salió mal. Visita https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git-es.md para ver cómo desinstalar manualmente."
             }
         }
         else
         {
             Write-Host ""
-            Write-Host "$YellowSign" "Uninstall canceled."
+            Write-Host "$YellowSign" "Desinstalación cancelada."
         }
     }
     else
     {
-       Write-Host "$RedSign" "Installation not found."
+       Write-Host "$RedSign" "Instalación no encontrada."
     }
 
 }
@@ -246,50 +246,50 @@ elseif ($Args.Count -eq 0)
     $Paths = Check-Paths
     if ($Directories -and $Paths)
     {
-        Write-Host "Checking for updates..."
+        Write-Host "Revisando si hay actualizaciones disponibles..."
         $GitRepoVersion = Get-GitRepoVersion
         $MoarRepoVersion = Get-MoarRepoVersion
         switch ($True)
         {
-            ((git --version) -ne "git version $GitRepoVersion") {Write-Host "$YellowSign" "Git update found ($GitRepoVersion)."; $GitUpdateAvailable = $True}
-            ((moar --version) -ne "v$MoarRepoVersion") {Write-Host "$YellowSign" "Moar update found ($MoarRepoVersion)."; $MoarUpdateAvailable = $True}
-            Default {Write-Host "$GreenSign" "Git and Moar are up to date."}
+            ((git --version) -ne "git version $GitRepoVersion") {Write-Host "$YellowSign" "Actualización de Git disponible ($GitRepoVersion)."; $GitUpdateAvailable = $True}
+            ((moar --version) -ne "v$MoarRepoVersion") {Write-Host "$YellowSign" "Actualización de Moar disponible ($MoarRepoVersion)."; $MoarUpdateAvailable = $True}
+            Default {Write-Host "$GreenSign" "Las últimas versiones Git y Moar están instaladas."}
         }
         if ($GitUpdateAvailable -or $MoarUpdateAvailable)
         {
             Write-Host ""
-            Write-Host "Update?"
+            Write-Host "¿Actualizar?"
             $PromptAnswer = Prompt-Continue
             if ($PromptAnswer -eq $True)
             {
                 try
                 {
                     Write-Host ""
-                    Write-Host "Updating..."
+                    Write-Host "Actualizando..."
                     if ($GitUpdateAvailable)
                     {
-                        Write-Host "Downloading Git..."
+                        Write-Host "Descargando Git..."
                         Download-Git
                     }
                     if ($MoarUpdateAvailable)
                     {
-                        Write-Host "Downloading Moar..."
+                        Write-Host "Descargando Moar..."
                         Download-Moar
                     }
-                    Write-Host "$GreenSign" "Done."
+                    Write-Host "$GreenSign" "Hecho."
                     Print-LocalVersions
                 }
                 catch
                 {
                     Write-Host ""
-                    Write-Host "$RedSign" "Something went wrong. Visit https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md to see how to update manually."
+                    Write-Host "$RedSign" "Algo salió mal. Visita https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git-es.md para ver cómo actualizar manualmente."
                     Print-LocalVersions
                 }
             }
             else
             {
                 Write-Host ""
-                Write-Host "$YellowSign" "Update not started."
+                Write-Host "$YellowSign" "Actualización interrumpida."
                 Print-LocalVersions
             }
         }
@@ -302,39 +302,39 @@ elseif ($Args.Count -eq 0)
     {
         $GitRepoVersion = Get-GitRepoVersion
         $MoarRepoVersion = Get-MoarRepoVersion
-        Write-Host "$YellowSign" "Git ($GitRepoVersion) and Moar ($MoarRepoVersion) will be installed."
+        Write-Host "$YellowSign" "Git ($GitRepoVersion) y Moar ($MoarRepoVersion) serán instalados."
         Write-Host ""
-        Write-Host "Install?"
+        Write-Host "¿Instalar?"
         $PromptAnswer = Prompt-Continue
         if ($PromptAnswer -eq $True)
         {
             try
             {
                 Write-Host ""
-                Write-Host "Downloading Git..."
+                Write-Host "Descargando Git..."
                 Download-Git
-                Write-Host "Downloading Moar..."
+                Write-Host "Descargando Moar..."
                 Download-Moar
-                Write-Host "Adding paths..."
+                Write-Host "Agregando rutas..."
                 Add-Paths
-                Write-Host "Refreshing paths in the current shell..."
+                Write-Host "Actualizando las rutas en el shell actual..."
                 $Env:Path =
                     [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine) +
                     [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::User)
-                Write-Host "$GreenSign" "Done."
-                Write-Host "$YellowSign" "May need to restart other applications to start using Git and Moar."
+                Write-Host "$GreenSign" "Hecho."
+                Write-Host "$YellowSign" "Quizá necesites reiniciar otras aplicaciones para empezar a usar Git y Moar."
                 Print-LocalVersions
             }
             catch
             {
                 Write-Host ""
-                Write-Host "$RedSign" "Something went wrong. Visit https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md to see how to install manually."
+                Write-Host "$RedSign" "Algo salió mal. Visita https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git-es.md para ver cómo instalar manualmente."
             }
         }
         else
         {
             Write-Host ""
-            Write-Host "$YellowSign" "Installation canceled."
+            Write-Host "$YellowSign" "Instalación cancelada."
         }
     }
 }
@@ -342,10 +342,10 @@ else
 {
     if ($Args.Count -eq 1)
     {
-        Write-Host "$RedSign" "Parameter not valid."
+        Write-Host "$RedSign" "Parámetro no valido."
     }
     else
     {
-        Write-Host "$RedSign" "Parameters not valid."
+        Write-Host "$RedSign" "Parámetro no valido."
     }
 }
