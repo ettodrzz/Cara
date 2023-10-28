@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Git for Windows Manager (v0.5).
+Git for Windows Manager (v0.6).
 .DESCRIPTION
 Downloads, installs or removes Git.
 MinGit is a simple version of Git, without extra features like Git-Bash and Git-Gui.
@@ -26,19 +26,19 @@ https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md
 # │   └─ Delete-Directories ............. 77
 # ├─ Paths
 # │  └┬─ Check-Paths .................... 86
-# │   ├─ Add-Paths ...................... 95
-# │   └─ Remove-Paths ................... 102
+# │   ├─ Add-Paths ...................... 96
+# │   └─ Remove-Paths ................... 104
 # ├─ Versions
-# │  └┬─ Print-LocalVersions ............ 112
+# │  └┬─ Print-LocalVersions ............ 115
 # │   └─ Repositories
-# │      └┬─ Get-GitRepoVersion ......... 122
-# │       └─ Get-MoarRepoVersion ........ 134
+# │      └┬─ Get-GitRepoVersion ......... 125
+# │       └─ Get-MoarRepoVersion ........ 137
 # ├─ Downloads
-# │  └┬─ Download-Git ................... 151
-# │   └─ Download-Moar .................. 160
-# └─ Prompt-Continue .................... 169
+# │  └┬─ Download-Git ................... 154
+# │   └─ Download-Moar .................. 163
+# └─ Prompt-Continue .................... 172
 
-# [Execution] ........................... 192
+# [Execution] ........................... 195
 
 # ┌────────────┐
 # │ Parameters │
