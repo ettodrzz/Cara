@@ -176,7 +176,7 @@ Function Prompt-Continue
     do
     {
         $PromptOption = Read-Host
-        if (($PromptOption -eq "") -or ($PromptOption -eq "S") -or ($PromptOption -eq "S$([char]0xED)"))
+        if (($PromptOption -eq "") -or ($PromptOption -eq "S") -or ($PromptOption -eq "Si") -or ($PromptOption -eq "S$([char]0xED)"))
         {
             return $True
         }
