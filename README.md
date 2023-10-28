@@ -11,7 +11,7 @@ Especialmente con Linux, no soy un experto, pero sé lo intimidante que puede ll
 ### Windows
 
 - [Winget](https://github.com/ettodrzz/Cara/blob/main/Windows/Winget/winget.md)
-- [Git](https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md)
+- [Git](https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git-es.md)
 - [Windows Terminal](https://github.com/ettodrzz/Cara/blob/main/Windows/WT/wt.md)
 
 ### Linux
