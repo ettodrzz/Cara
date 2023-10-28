@@ -171,12 +171,12 @@ Function Download-Moar
 # ┌─ Asks the user if they want to continue with the script.
 Function Prompt-Continue
 {
-    Write-Host "[S]Si " -ForegroundColor Yellow -NoNewLine
+    Write-Host "[S]S$([char]0xED) " -ForegroundColor Yellow -NoNewLine
     Write-Host "[N]No: " -NoNewLine
     do
     {
         $PromptOption = Read-Host
-        if (($PromptOption -eq "") -or ($PromptOption -eq "S") -or ($PromptOption -eq "Si"))
+        if (($PromptOption -eq "") -or ($PromptOption -eq "S") -or ($PromptOption -eq "Sí"))
         {
             return $True
         }
@@ -188,7 +188,7 @@ Function Prompt-Continue
         {
             Write-Host "$RedSign" "Vuelva a escribir una opci$([char]0xF3)n valida: " -NoNewLine
         }
-    } while ($PromptOption -notin @("", "S", "Si", "N", "No"))
+    } while ($PromptOption -notin @("", "S", "Si", "Sí", "N", "No"))
 }
 
 # ┌───────────┐
