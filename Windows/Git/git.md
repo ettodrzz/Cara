@@ -52,7 +52,7 @@ irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git-e
 
 ### Manual
 
-Usar la interfaz gráfica es más tedioso. Es la alternativa si el script falla, se requiere instalar una anterior versión o guardar los archivos ejecutables en una diferente ruta.
+Usar la interfaz gráfica es más tedioso. Es la alternativa si el script falla, se requiere instalar una versión anterior o guardar los archivos ejecutables en una diferente ruta.
 
 1. Guardar los archivos de programa
     - Git
@@ -88,7 +88,7 @@ irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git-e
 
 ### Manual
 
-Usar la interfaz gráfica es más tedioso. Es la alternativa si el script falla o se requiere cambiar a una anterior versión.
+Usar la interfaz gráfica es más tedioso. Es la alternativa si el script falla o se requiere cambiar a una versión anterior.
 
 - Git
     1. En la página de la [↗ última versión](https://github.com/git-for-windows/git/releases/latest "Versión más reciente de Git"), guardar el archivo `MinGit-...-64-bit.zip`
@@ -156,7 +156,7 @@ git config --global user.email johndoe@example.com
 
 ### Nombre de la rama inicial
 
-Cuando se crea un nuevo repositorio, una buena practica es usar el nombre "main" para la rama principal, esto para cumplir con las [↗ directrices de la comunidad](https://sfconservancy.org/news/2020/jun/23/gitbranchname/ "¿Por qué Main?").
+Cuando se crea un nuevo repositorio, una buena practica es usar el nombre *main* para la rama principal, esto para cumplir con las [↗ directrices de la comunidad](https://sfconservancy.org/news/2020/jun/23/gitbranchname/ "¿Por qué Main?").
 
 ```powershell
 git config --global init.defaultBranch main
