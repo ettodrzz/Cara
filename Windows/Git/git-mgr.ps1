@@ -225,7 +225,7 @@ if (($Remove) -and ($Args.Count -eq 0))
             catch
             {
                 Write-Host ""
-                Write-Host "$RedSign" "Something went wrong. Visit https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md to see how to uninstall manually."
+                Write-Host "$RedSign" "Something went wrong."
             }
         }
         else
@@ -282,7 +282,7 @@ elseif ($Args.Count -eq 0)
                 catch
                 {
                     Write-Host ""
-                    Write-Host "$RedSign" "Something went wrong. Visit https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md to see how to update manually."
+                    Write-Host "$RedSign" "Something went wrong."
                     Print-LocalVersions
                 }
             }
@@ -328,7 +328,7 @@ elseif ($Args.Count -eq 0)
             catch
             {
                 Write-Host ""
-                Write-Host "$RedSign" "Something went wrong. Visit https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md to see how to install manually."
+                Write-Host "$RedSign" "Something went wrong."
             }
         }
         else
