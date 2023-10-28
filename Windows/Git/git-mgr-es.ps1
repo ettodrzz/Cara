@@ -46,8 +46,8 @@ https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md
 
 Param
 (
-    [Parameter(ValueFromPipeline)]
-    [Alias("R")]
+    [Parameter(ValueFromPipeline, ParameterSetName = "Eliminar")]
+    [Alias("E")]
     [Switch]$Remove
 )
 
@@ -188,7 +188,7 @@ Function Prompt-Continue
         {
             Write-Host "$RedSign" "Vuelva a escribir una opci$([char]0xF3)n valida: " -NoNewLine
         }
-    } while ($PromptOption -notin @("", "S", "Si", "Sí", "N", "No"))
+    } while ($PromptOption -notin @("", "S", "Si", "S$([char]0xED)", "N", "No"))
 }
 
 # ┌───────────┐
