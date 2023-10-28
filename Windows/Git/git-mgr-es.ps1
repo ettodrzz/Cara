@@ -176,7 +176,7 @@ Function Prompt-Continue
     do
     {
         $PromptOption = Read-Host
-        if (($PromptOption -eq "") -or ($PromptOption -eq "S") -or ($PromptOption -eq "Si") -or ($PromptOption -eq "Sí"))
+        if (($PromptOption -eq "") -or ($PromptOption -eq "S") -or ($PromptOption -eq "Si") -or ($PromptOption -eq "S$([char]0xF3)"))
         {
             return $True
         }
@@ -225,7 +225,7 @@ if (($Remove) -and ($Args.Count -eq 0))
             catch
             {
                 Write-Host ""
-                Write-Host "$RedSign" "Algo sali$([char]0xF3) mal. Visita https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git-es.md para ver c$([char]0xF3)mo desinstalar manualmente."
+                Write-Host "$RedSign" "Algo sali$([char]0xF3) mal. Visita https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md para ver c$([char]0xF3)mo desinstalar manualmente."
             }
         }
         else
@@ -282,7 +282,7 @@ elseif ($Args.Count -eq 0)
                 catch
                 {
                     Write-Host ""
-                    Write-Host "$RedSign" "Algo sali$([char]0xF3) mal. Visita https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git-es.md para ver c$([char]0xF3)mo actualizar manualmente."
+                    Write-Host "$RedSign" "Algo sali$([char]0xF3) mal. Visita https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md para ver c$([char]0xF3)mo actualizar manualmente."
                     Print-LocalVersions
                 }
             }
@@ -328,7 +328,7 @@ elseif ($Args.Count -eq 0)
             catch
             {
                 Write-Host ""
-                Write-Host "$RedSign" "Algo sali$([char]0xF3) mal. Visita https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git-es.md para ver c$([char]0xF3)mo instalar manualmente."
+                Write-Host "$RedSign" "Algo sali$([char]0xF3) mal. Visita https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md para ver c$([char]0xF3)mo instalar manualmente."
             }
         }
         else
