@@ -26,19 +26,19 @@ https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md
 # │   └─ Delete-Directories ............. 77
 # ├─ Paths
 # │  └┬─ Check-Paths .................... 86
-# │   ├─ Add-Paths ...................... 95
-# │   └─ Remove-Paths ................... 102
+# │   ├─ Add-Paths ...................... 96
+# │   └─ Remove-Paths ................... 104
 # ├─ Versions
-# │  └┬─ Print-LocalVersions ............ 112
+# │  └┬─ Print-LocalVersions ............ 115
 # │   └─ Repositories
-# │      └┬─ Get-GitRepoVersion ......... 122
-# │       └─ Get-MoarRepoVersion ........ 134
+# │      └┬─ Get-GitRepoVersion ......... 125
+# │       └─ Get-MoarRepoVersion ........ 137
 # ├─ Downloads
-# │  └┬─ Download-Git ................... 151
-# │   └─ Download-Moar .................. 160
-# └─ Prompt-Continue .................... 169
+# │  └┬─ Download-Git ................... 154
+# │   └─ Download-Moar .................. 163
+# └─ Prompt-Continue .................... 172
 
-# [Execution] ........................... 192
+# [Execution] ........................... 195
 
 # ┌────────────┐
 # │ Parameters │
@@ -171,7 +171,7 @@ Function Download-Moar
 # ┌─ Asks the user if they want to continue with the script.
 Function Prompt-Continue
 {
-    Write-Host "[S]Sí " -ForegroundColor Yellow -NoNewLine
+    Write-Host "[S]S$([char]0xED) " -ForegroundColor Yellow -NoNewLine
     Write-Host "[N]No: " -NoNewLine
     do
     {
@@ -186,9 +186,9 @@ Function Prompt-Continue
         }
         else
         {
-            Write-Host "$RedSign" "Vuelve a escribir una opción valida: " -NoNewLine
+            Write-Host "$RedSign" "Vuelve a escribir una opci$([char]0xF3)n valida: " -NoNewLine
         }
-    } while ($PromptOption -notin @("", "S", "Si", "Sí", "N", "No"))
+    } while ($PromptOption -notin @("", "S", "Si", "S$([char]0xED)", "N", "No"))
 }
 
 # ┌───────────┐
@@ -201,7 +201,7 @@ if (($Remove) -and ($Args.Count -eq 0))
     $Paths = Check-Paths
     if ($Directories -and $Paths)
     {
-        Write-Host "$GreenSign" "Instalación encontrada."
+        Write-Host "$GreenSign" "Instalaci$([char]0xF3)n encontrada."
         Print-LocalVersions
         Write-Host ""
         Write-Host "¿Desinstalar?"
@@ -220,23 +220,23 @@ if (($Remove) -and ($Args.Count -eq 0))
                     [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine) +
                     [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::User)
                 Write-Host "$GreenSign" "Hecho."
-                Write-Host "$YellowSign" "Quizá otras aplicaciones necesiten ser reiniciadas para que dejen de usar la rutas de Git y Moar."
+                Write-Host "$YellowSign" "Quiz$([char]0xE1) otras aplicaciones necesiten ser reiniciadas para que dejen de usar la rutas de Git y Moar."
             }
             catch
             {
                 Write-Host ""
-                Write-Host "$RedSign" "Algo salió mal. Visita https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git-es.md para ver cómo desinstalar manualmente."
+                Write-Host "$RedSign" "Algo sali$([char]0xF3) mal. Visita https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git-es.md para ver c$([char]0xF3)mo desinstalar manualmente."
             }
         }
         else
         {
             Write-Host ""
-            Write-Host "$YellowSign" "Desinstalación cancelada."
+            Write-Host "$YellowSign" "Desinstalaci$([char]0xF3)n cancelada."
         }
     }
     else
     {
-       Write-Host "$RedSign" "Instalación no encontrada."
+       Write-Host "$RedSign" "Instalaci$([char]0xF3)n no encontrada."
     }
 
 }
@@ -251,9 +251,9 @@ elseif ($Args.Count -eq 0)
         $MoarRepoVersion = Get-MoarRepoVersion
         switch ($True)
         {
-            ((git --version) -ne "git version $GitRepoVersion") {Write-Host "$YellowSign" "Actualización de Git disponible ($GitRepoVersion)."; $GitUpdateAvailable = $True}
-            ((moar --version) -ne "v$MoarRepoVersion") {Write-Host "$YellowSign" "Actualización de Moar disponible ($MoarRepoVersion)."; $MoarUpdateAvailable = $True}
-            Default {Write-Host "$GreenSign" "Las últimas versiones Git y Moar están instaladas."}
+            ((git --version) -ne "git version $GitRepoVersion") {Write-Host "$YellowSign" "Actualizaci$([char]0xF3)n de Git disponible ($GitRepoVersion)."; $GitUpdateAvailable = $True}
+            ((moar --version) -ne "v$MoarRepoVersion") {Write-Host "$YellowSign" "Actualizaci$([char]0xF3)n de Moar disponible ($MoarRepoVersion)."; $MoarUpdateAvailable = $True}
+            Default {Write-Host "$GreenSign" "Las $([char]0xFA)ltimas versiones Git y Moar est$([char]0xE1)n instaladas."}
         }
         if ($GitUpdateAvailable -or $MoarUpdateAvailable)
         {
@@ -282,14 +282,14 @@ elseif ($Args.Count -eq 0)
                 catch
                 {
                     Write-Host ""
-                    Write-Host "$RedSign" "Algo salió mal. Visita https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git-es.md para ver cómo actualizar manualmente."
+                    Write-Host "$RedSign" "Algo sali$([char]0xF3) mal. Visita https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git-es.md para ver c$([char]0xF3)mo actualizar manualmente."
                     Print-LocalVersions
                 }
             }
             else
             {
                 Write-Host ""
-                Write-Host "$YellowSign" "Actualización interrumpida."
+                Write-Host "$YellowSign" "Actualizaci$([char]0xF3)n interrumpida."
                 Print-LocalVersions
             }
         }
@@ -302,7 +302,7 @@ elseif ($Args.Count -eq 0)
     {
         $GitRepoVersion = Get-GitRepoVersion
         $MoarRepoVersion = Get-MoarRepoVersion
-        Write-Host "$YellowSign" "Git ($GitRepoVersion) y Moar ($MoarRepoVersion) serán instalados."
+        Write-Host "$YellowSign" "Git ($GitRepoVersion) y Moar ($MoarRepoVersion) ser$([char]0xE1)n instalados."
         Write-Host ""
         Write-Host "¿Instalar?"
         $PromptAnswer = Prompt-Continue
@@ -322,19 +322,19 @@ elseif ($Args.Count -eq 0)
                     [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine) +
                     [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::User)
                 Write-Host "$GreenSign" "Hecho."
-                Write-Host "$YellowSign" "Quizá necesites reiniciar otras aplicaciones para empezar a usar Git y Moar."
+                Write-Host "$YellowSign" "Quiz$([char]0xE1) necesites reiniciar otras aplicaciones para empezar a usar Git y Moar."
                 Print-LocalVersions
             }
             catch
             {
                 Write-Host ""
-                Write-Host "$RedSign" "Algo salió mal. Visita https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git-es.md para ver cómo instalar manualmente."
+                Write-Host "$RedSign" "Algo sali$([char]0xF3) mal. Visita https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git-es.md para ver c$([char]0xF3)mo instalar manualmente."
             }
         }
         else
         {
             Write-Host ""
-            Write-Host "$YellowSign" "Instalación cancelada."
+            Write-Host "$YellowSign" "Instalaci$([char]0xF3)n cancelada."
         }
     }
 }
@@ -342,10 +342,10 @@ else
 {
     if ($Args.Count -eq 1)
     {
-        Write-Host "$RedSign" "Parámetro no valido."
+        Write-Host "$RedSign" "Par$([char]0xE1)metro no valido."
     }
     else
     {
-        Write-Host "$RedSign" "Parámetro no valido."
+        Write-Host "$RedSign" "Par$([char]0xE1)metro no valido."
     }
 }
