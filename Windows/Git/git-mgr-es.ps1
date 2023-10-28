@@ -46,9 +46,9 @@ https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md
 
 Param
 (
-    [Parameter(ValueFromPipeline, ParameterSetName = "Eliminar")]
+    [Parameter(ValueFromPipeline)]
     [Alias("E")]
-    [Switch]$Remove
+    [Switch]$Eliminar
 )
 
 # ┌───────────┐
@@ -176,7 +176,7 @@ Function Prompt-Continue
     do
     {
         $PromptOption = Read-Host
-        if (($PromptOption -eq "") -or ($PromptOption -eq "S") -or ($PromptOption -eq "Sí"))
+        if (($PromptOption -eq "") -or ($PromptOption -eq "S") -or ($PromptOption -eq "S$([char]0xED)"))
         {
             return $True
         }
@@ -195,7 +195,7 @@ Function Prompt-Continue
 # │ Execution │
 # └───────────┘
 
-if (($Remove) -and ($Args.Count -eq 0))
+if (($Eliminar) -and ($Args.Count -eq 0))
 {
     $Directories = Check-Directories
     $Paths = Check-Paths
