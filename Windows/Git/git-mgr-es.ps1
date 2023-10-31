@@ -1,13 +1,13 @@
 <#
 .SYNOPSIS
-Git for Windows Manager (v0.6).
+Administrador de Git para Windows (v0.6)
 .DESCRIPTION
-Downloads, installs or removes Git.
-MinGit is a simple version of Git, without extra features like Git-Bash and Git-Gui.
-Also Moar is included, a really good pager.
-Both programs are installed for the current user.
-.PARAMETER Remove
-Deletes the installed versions of Git and Moar.
+Descarga, actualiza o desinstala Git.
+MinGit es una version simple de Git, sin funciones extras como Git-Bash and Git-Gui.
+Tambien incluye Moar, un paginador muy bueno.
+Ambos programas son instalados para el usuario actual.
+.PARAMETER Eliminar
+Desinstala Git y Moar.
 .LINK
 https://github.com/ettodrzz/Cara/blob/main/Windows/Git/git.md
 #>
