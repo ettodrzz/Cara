@@ -32,9 +32,9 @@ Get-ExecutionPolicy
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-# Cambia la directiva de ejecución a RemoteSigned en el usuario actual.
-# También se puede usar el scope Process si se quiere hacer el cambio sólo en la sesión actual de PowerShell.
 ```
+
+↑ *Cambia la directiva de ejecución a `RemoteSigned` del usuario actual. También se puede usar el scope `Process` si se quiere hacer el cambio sólo en la sesión actual de PowerShell.*
 
 # Instalación
 
@@ -46,8 +46,9 @@ Ejecutar el script:
 
 ```powershell
 irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git-mgr-es.ps1" -OutFile "$Env:Temp\git-mgr-es.ps1"; .$Env:Temp\git-mgr-es.ps1
-# Descarga el script en la carpeta de archivos temporales (%Temp%), después lo ejecuta.
 ```
+
+↑ *Descarga el script en la carpeta de archivos temporales (%Temp%), después lo ejecuta.*
 
 # Eliminación
 
@@ -57,8 +58,9 @@ Ejecutar el script:
 
 ```powershell
 irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git-mgr-es.ps1" -OutFile "$Env:Temp\git-mgr-es.ps1"; .$Env:Temp\git-mgr-es.ps1 -Eliminar
-# Descarga el script en la carpeta de archivos temporales (%Temp%), después lo ejecuta.
 ```
+
+↑ *Descarga el script en la carpeta de archivos temporales (%Temp%), después lo ejecuta.*
 
 # Configuración
 
@@ -66,11 +68,9 @@ irm -Uri "https://raw.githubusercontent.com/ettodrzz/Cara/main/Windows/Git/git-m
 
 Como MinGit no incluye editor ni paginador, entonces se tienen que especificar para evitar los siguientes errores:
 
-```powershell
-# error: cannot spawn vi: No such file or directory
-# error: unable to start editor 'vi'
-# error: cannot spawn less: No such file or directory
-```
+- `error: cannot spawn vi: No such file or directory`
+- `error: unable to start editor 'vi'`
+- `error: cannot spawn less: No such file or directory`
 
 El script automáticamente descarga el archivo [↗ gitconfig](https://github.com/ettodrzz/Cara/blob/main/Windows/Git/gitconfig "Código del archivo"), remplazando el existente en `%LocalAppData%\Programas\Git\etc`. Esto pone a Notepad como el editor y Moar como el paginador.
 
@@ -102,8 +102,9 @@ Es un método de autenticación seguro que permite conectarse a GitHub sin tener
 
 ```powershell
 ssh-keygen -t ed25519 -C johndoe@example.com
-# Genera dos llaves, una pública y otra privada
 ```
+
+↑ *Genera dos llaves, una pública y otra privada.*
 
 2. Copiar la llave pública en el Portapapeles de Windows:
 
