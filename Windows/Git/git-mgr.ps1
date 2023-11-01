@@ -98,7 +98,7 @@ Function Add-Paths
     $IndexPathEnvVar = ((reg query HKCU\Environment /v Path)[2]).LastIndexOf("    ") + 4
     $PathEnvVar = ((reg query HKCU\Environment /v Path)[2]).Substring($IndexPathEnvVar)
     $UpdatedPathEnvVar = $PathEnvVar + "%LocalAppData%\Programs\Git\mingw64\bin;%LocalAppData%\Programs\Moar;"
-    reg add HKCU\Environment /v Path /t REG_EXPAND_SZ /d $UpdatedPathEnvVar /f | Out-Null
+    [Microsoft.Win32.Registry]::SetValue("HKEY_CURRENT_USER\Environment", "Path", $UpdatedPathEnvVar, [Microsoft.Win32.RegistryValueKind]::ExpandString)
 }
 # ┌─  Removes Git and Moar paths in the current user's Path environment variable.
 Function Remove-Paths
@@ -106,7 +106,7 @@ Function Remove-Paths
     $IndexPathEnvVar = ((reg query HKCU\Environment /v Path)[2]).LastIndexOf("    ") + 4
     $PathEnvVar = ((reg query HKCU\Environment /v Path)[2]).Substring($IndexPathEnvVar)
     $UpdatedPathEnvVar = (($PathEnvVar).Replace("%LocalAppData%\Programs\Git\mingw64\bin;", "")).Replace("%LocalAppData%\Programs\Moar;", "")
-    reg add HKCU\Environment /v Path /t REG_EXPAND_SZ /d $UpdatedPathEnvVar /f | Out-Null
+    [Microsoft.Win32.Registry]::SetValue("HKEY_CURRENT_USER\Environment", "Path", $UpdatedPathEnvVar, [Microsoft.Win32.RegistryValueKind]::ExpandString)
 }
 
 # ┌ Versions ┐
