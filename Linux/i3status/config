@@ -1,0 +1,40 @@
+general
+{
+    colors = true
+    color_bad = "#ffcbae"
+    color_degraded = "#ffd914"
+    color_good = "#e5ffae"
+    interval = 2
+    output_format = "i3bar"
+}
+
+order += "wireless wlan0"
+order += "ethernet eth0"
+order += "battery 0"
+order += "tztime local"
+
+wireless wlan0
+{
+    format_up = "󰤨 %quality %ip"
+    format_down = "󰤭"
+}
+ethernet eth0
+{
+    format_up = "󰈁 %ip"
+    format_down = "󰈂"
+}
+battery 0
+{
+    format = "%status %percentage"
+    format_down = "󰚥"
+    low_threshold = 25
+    status_bat = "󰁹"
+    status_chr = "󰂄"
+    status_full = "󱟢"
+    status_unk = "󰂑"
+    threshold_type = "percentage"
+}
+tztime local
+{
+    format = "%A %B/%d/%Y %H:%M"
+}

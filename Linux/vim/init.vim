@@ -1,3 +1,5 @@
+syntax on
+
 " Detect the type of file that is edited
 filetype on
 

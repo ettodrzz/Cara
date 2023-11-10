@@ -2,72 +2,67 @@
 TERM = "xterm-256color"
 
 [window]
-opacity = 0.95
+opacity = 0.9
 title = "Alacritty"
 dynamic_title = false
-[window.dimensions]
-columns = 100
-lines = 25
 [window.padding]
 x = 8
 y = 8
 
 [font]
-size = 12
+size = 11
+[font.normal]
+family = "Hack"
+style = "Regular"
 
-# Dracula theme
 [colors.primary]
-background = "#282a36"
-foreground = "#f8f8f2"
-bright_foreground = "#ffffff"
+background = "#000000"
+foreground = "#f9ecd4"
+bright_foreground = "#ffeac3"
 [colors.cursor]
-text = "CellBackground"
-cursor = "CellForeground"
+text = "#000000"
+cursor = "#ffeac3"
 [colors.vi_mode_cursor]
 text = "CellBackground"
 cursor = "CellForeground"
-[colors.search.matches]
-foreground = "#44475a"
-background = "#50fa7b"
-[colors.search.focused_match]
-foreground = "#44475a"
-background = "#ffb86c"
-[colors.footer_bar]
-background = "#282a36"
-foreground = "#f8f8f2"
-[colors.hints.start]
-foreground = "#282a36"
-background = "#f1fa8c"
-[colors.hints.end]
-foreground = "#f1fa8c"
-background = "#282a36"
-[colors.line_indicator]
-foreground = "None"
-background = "None"
 [colors.selection]
 text = "CellForeground"
-background = "#44475a"
+background = "#707070"
 [colors.normal]
-black = "#21222c"
-red = "#ff5555"
-green = "#50fa7b"
-yellow = "#f1fa8c"
-blue = "#bd93f9"
-magenta = "#ff79c6"
-cyan = "#8be9fd"
-white = "#f8f8f2"
+black = "#303030"
+red = "#d9ad94"
+green = "#c3d994"
+yellow = "#d9b911"
+blue = "#1185d9"
+magenta = "#d911b9"
+cyan = "#94d9b8"
+white = "#e0e0e0"
 [colors.bright]
-black = "#6272a4"
-red = "#ff6e6e"
-green = "#69ff94"
-yellow = "#ffffa5"
-blue = "#d6acff"
-magenta = "#ff92df"
-cyan = "#a4ffff"
+black = "#606060"
+red = "#ffcbae"
+green = "#e5ffae"
+yellow = "#ffd914"
+blue = "#149cff"
+magenta = "#ff14d9"
+cyan = "#aeffd8"
 white = "#ffffff"
+[colors.search.matches]
+foreground = "#707070"
+background = "#c3d994"
+[colors.search.focused_match]
+foreground = "#707070"
+background = "#ffc281"
+[colors.footer_bar]
+background = "#000000"
+foreground = "#e0e0e0"
+[colors.hints.start]
+foreground = "#000000"
+background = "#d9b911"
+[colors.hints.end]
+foreground = "#d9b911"
+background = "#000000"
 
 [cursor.style]
-shape = "Underline"
 blinking = "On"
 
 [mouse]
