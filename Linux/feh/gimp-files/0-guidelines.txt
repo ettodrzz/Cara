@@ -1,0 +1,84 @@
+┌───────────────┐
+│ Prerequisites │
+└───────────────┘
+
+- Install Inconsolata fonts
+
+┌───────┐
+│ Image │
+└───────┘
+
+size 3840x2160
+export
+ ├ jpg
+ ├ quality 90
+ ├ all checkboxes empty
+ └ default advanced options
+
+┌────────┐
+│ Layers │
+└────────┘
+
+Background │
+───────────┘
+fill #000
+
+Card background │
+────────────────┘
+size 580x780
+color ~#000, ~#fff
+gaussian blur 3
+hsv noise
+ ├ dulling 1
+ ├ hue 10
+ ├ saturation .05
+ └ value .075
+centered
+
+Card border back │
+─────────────────┘
+size 600x800
+inner border 10 #f9ecd4
+centered
+
+Card decoration │
+────────────────┘
+size 660x906
+centered
+
+Object │
+───────┘
+size relative
+color warm
+hsv noise
+ ├ dulling 1
+ ├ hue 10
+ ├ saturation .05
+ └ value .075
+centered
+
+Card border bottom │
+───────────────────┘
+size 600x10
+fill #f9ecd4
+centered
+
+Card footer │
+────────────┘
+font Inconsolata 16, left justified
+color #f9ecd4, #707070
+centered
+
+Card number │
+────────────┘
+font Inconsolata Italic 48, left justified
+color #f9ecd4
+gap 8, 0, 0, 8
+aligned top-left
+
+Card name │
+──────────┘
+font Inconsolata Bold 64, left justified
+color #f9ecd4
+bottom-gap 8
+aligned bottom-center
