@@ -1,0 +1,27 @@
+! ┌───────┐
+! │ xterm │
+! └───────┘
+
+! Font style
+xterm*faceName: Hack
+xterm*faceSize: 12
+
+! Color theme
+xterm*background: #000000
+xterm*foreground: #f9ecd4
+xterm*color0: #303030
+xterm*color1: #d9ad94
+xterm*color2: #c3d994
+xterm*color3: #d9b911
+xterm*color4: #1185d9
+xterm*color5: #d911b9
+xterm*color6: #94d9b8
+xterm*color7: #e0e0e0
+xterm*color8: #606060
+xterm*color9: #ffcbae
+xterm*color10: #e5ffae
+xterm*color11: #ffd914
+xterm*color12: #149cff
+xterm*color13: #ff14d9
+xterm*color14: #aeffd8
+xterm*color15: #ffffff
