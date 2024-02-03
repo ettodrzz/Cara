@@ -1,0 +1,39 @@
+# Number of lines in active history
+HISTSIZE=512
+
+# Number of lines in file history
+HISTFILESIZE=1024
+
+# Window title, prompt
+PROMPT_COMMAND="source ~/.scripts/bash_prompt.sh"
+
+# Functions
+# Print the Windows user name and host name
+wuser()
+{
+	echo -e "$(powershell.exe -NoProfile -Command '$Env:UserName')" | tr --delete "\r"
+}
+whost()
+{
+	echo -e "$(powershell.exe -NoProfile -Command '$Env:ComputerName')" | tr --delete "\r"
+}
+# Change location to a specific directory
+cdoc()
+{
+	cd /mnt/c/Users/$(wuser)/Documents
+}
+cdwn()
+{
+	cd /mnt/c/Users/$(wuser)/Downloads
+}
+cprj()
+{
+	# If the directory doesn't exist, then creates it
+	if [ -d /mnt/c/Users/$(wuser)/Documents/Projects ]
+	then
+		cd /mnt/c/Users/$(wuser)/Documents/Projects
+	else
+		mkdir -v /mnt/c/Users/$(wuser)/Documents/Projects
+		cd /mnt/c/Users/$(wuser)/Documents/Projects
+	fi
+}
