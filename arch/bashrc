@@ -8,32 +8,23 @@ HISTFILESIZE=1024
 PROMPT_COMMAND="source ~/.scripts/bash_prompt.sh"
 
 # Functions
-# Print the Windows user name and host name
-wuser()
-{
-	echo -e "$(powershell.exe -NoProfile -Command '$Env:UserName')" | tr --delete "\r"
-}
-whost()
-{
-	echo -e "$(powershell.exe -NoProfile -Command '$Env:ComputerName')" | tr --delete "\r"
-}
 # Change location to a specific directory
 cdoc()
 {
-	cd /mnt/c/Users/$(wuser)/Documents
+	cd ~/Documents
 }
 cdwn()
 {
-	cd /mnt/c/Users/$(wuser)/Downloads
+	cd ~/Downloads
 }
 cprj()
 {
 	# If the directory doesn't exist, then creates it
-	if [ -d /mnt/c/Users/$(wuser)/Documents/Projects ]
+	if [ -d ~/Documents/Projects ]
 	then
-		cd /mnt/c/Users/$(wuser)/Documents/Projects
+		cd ~/Documents/Projects
 	else
-		mkdir -v /mnt/c/Users/$(wuser)/Documents/Projects
-		cd /mnt/c/Users/$(wuser)/Documents/Projects
+		mkdir -v ~/Documents/Projects
+		cd ~/Documents/Projects
 	fi
 }
