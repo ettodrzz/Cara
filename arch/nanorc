@@ -1,0 +1,15 @@
+# Documentation: https://www.nano-editor.org/dist/latest/nanorc.5.html
+
+# Display line numbers to the left
+set linenumbers
+
+# Automatically indent a newly created line to the same number of tabs and/or spaces as the previous line
+set autoindent
+
+# Tab size of number columns
+set tabsize 4
+
+# Enable soft line wrapping
+set softwrap
+# Make it wrap lines at blank characters (tabs and spaces) instead of always at the edge of the screen
+set atblanks
