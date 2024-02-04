@@ -1,3 +1,51 @@
+# Nerd Font
+
+Get the latest version name:
+
+```bash
+curl https://api.github.com/repos/ryanoasis/nerd-fonts/releases | jq '.[0].name'
+```
+
+List all available fonts:
+
+```bash
+curl https://api.github.com/repos/ryanoasis/nerd-fonts/releases | jq '.[0].assets.[].name'
+```
+
+Download font on the tmp directory:
+
+E.g.
+
+| Variable  | Value       |
+| --------- | ----------- |
+| version   | v3.1.1      |
+| font      | Hack.tar.xz |
+
+```bash
+cd /tmp
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/[version]/[font-name]
+```
+
+Decompress xz file:
+
+```bash
+unxz Hack.tar.xz
+```
+
+Decompress tar file:
+
+```bash
+mkdir Hack
+tar -xf Hack.tar -C Hack
+```
+
+Install font:
+
+```bash
+cp -r Hack ~/.local/share/fonts/Hack
+fc-cache
+```
+
 # Bash
 
 Restore the configuration:
