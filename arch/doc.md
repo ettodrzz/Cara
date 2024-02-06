@@ -46,9 +46,17 @@ cp -r Hack ~/.local/share/fonts/Hack
 fc-cache
 ```
 
+# Alacritty
+
+Restore configuration:
+
+```bash
+curl --create-dirs -o ~/.config/alacritty/alacritty.toml https://raw.githubusercontent.com/ettodrzz/Cara/main/arch/alacritty.toml
+```
+
 # Bash
 
-Restore the configuration:
+Restore configuration:
 
 ```bash
 curl --create-dirs -o ~/.bashrc https://raw.githubusercontent.com/ettodrzz/Cara/main/arch/bashrc -o ~/.scripts/bash_prompt.sh https://raw.githubusercontent.com/ettodrzz/Cara/main/arch/scripts/bash_prompt.sh
@@ -62,7 +70,7 @@ source ~/.bashrc
 
 # Nano
 
-Restore the configuration:
+Restore configuration:
 
 ```bash
 curl -o ~/.nanorc https://raw.githubusercontent.com/ettodrzz/Cara/main/arch/nanorc
