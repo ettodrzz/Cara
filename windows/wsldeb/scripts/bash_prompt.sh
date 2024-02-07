@@ -16,8 +16,11 @@ custom_prompt()
 
 	# Window title
 	PS1="\[\033]2;\w\007\]"
+	
 	# Prompt
-	PS1+="$color_bg \$ $color_reset$color_fg$color_reset "
+	# pl-left_hard_divider  e0b0
+	local div="$(echo -e "\Ue0b0")"
+	PS1+="$color_bg \$ $color_reset$color_fg$div$color_reset "
 }
 
 custom_prompt
