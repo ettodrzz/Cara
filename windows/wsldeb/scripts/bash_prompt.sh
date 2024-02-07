@@ -12,15 +12,19 @@ custom_prompt()
 	local color_fg="\[\e[38;2;${color};49m\]"
 	local color_reset="\[\e[0m\]"
 
-	unset additive
-
-	# Window title
-	PS1="\[\033]2;\w\007\]"
-	
-	# Prompt
-	# pl-left_hard_divider  e0b0
+	# Nerd Fonts
+	# Name                 | Logo | Code
+	# ---------------------|------|-----
+	# pl-left_hard_divider |     | e0b0
 	local div="$(echo -e "\Ue0b0")"
-	PS1+="$color_bg \$ $color_reset$color_fg$div$color_reset "
+
+	# Change window title
+	PS1="\[\033]2;\w\007\]"
+
+	# Change prompt
+	PS1+="$color_bg \$ $color_fg$div$color_reset "
+
+	unset additive
 }
 
 custom_prompt
